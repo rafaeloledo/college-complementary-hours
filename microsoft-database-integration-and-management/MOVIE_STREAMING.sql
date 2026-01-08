@@ -68,19 +68,16 @@ MovieActors Table:
   - ActorID (FK)
 */
 
--- Create Directors table
 CREATE TABLE Directors (
   DirectorID INT PRIMARY KEY,
   Name NVARCHAR(100) NOT NULL
 );
 
--- Create Actors table
 CREATE TABLE Actors (
   ActorID INT PRIMARY KEY,
   Name NVARCHAR(100) NOT NULL
 );
 
--- Create Movies table
 CREATE TABLE Movies (
   MovieID INT PRIMARY KEY,
   Title NVARCHAR(200) NOT NULL,
@@ -89,7 +86,6 @@ CREATE TABLE Movies (
   FOREIGN KEY (DirectorID) REFERENCES Directors(DirectorID)
 );
 
--- Create MovieActors table (Many-to-Many)
 CREATE TABLE MovieActors (
   MovieID INT NOT NULL,
   ActorID INT NOT NULL,
@@ -97,4 +93,3 @@ CREATE TABLE MovieActors (
   FOREIGN KEY (MovieID) REFERENCES Movies(MovieID),
   FOREIGN KEY (ActorID) REFERENCES Actors(ActorID)
 );
-

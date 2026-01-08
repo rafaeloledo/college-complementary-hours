@@ -75,21 +75,18 @@ BookAuthors Table:
   - AuthorID (FK)
 */
 
--- Create Publishers table
 CREATE TABLE Publishers (
   PublisherID INT PRIMARY KEY,
   Name NVARCHAR(100) NOT NULL,
   Address NVARCHAR(255)
 );
 
--- Create Authors table
 CREATE TABLE Authors (
   AuthorID INT PRIMARY KEY,
   FirstName NVARCHAR(50) NOT NULL,
   LastName NVARCHAR(50) NOT NULL
 );
 
--- Create Books table
 CREATE TABLE Books (
   BookID INT PRIMARY KEY,
   Title NVARCHAR(200) NOT NULL,
@@ -98,7 +95,6 @@ CREATE TABLE Books (
   FOREIGN KEY (PublisherID) REFERENCES Publishers(PublisherID)
 );
 
--- Create BookAuthors table (Many-to-Many)
 CREATE TABLE BookAuthors (
   BookID INT NOT NULL,
   AuthorID INT NOT NULL,
