@@ -1,0 +1,1 @@
+# On the time of the course, libraries are broken, so i've not managed to make EF and MySql work
